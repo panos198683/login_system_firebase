@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1018346361358",
+    "firebase_url": "https://upgrade-6e86c.firebaseio.com",
+    "project_id": "upgrade-6e86c",
+    "storage_bucket": "upgrade-6e86c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1018346361358:android:da6fd815e2d956f8df225f",
+        "android_client_info": {
+          "package_name": "com.example.upgrade"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1018346361358-uk44voa31ej0ee02pht76ucf7i7rc9a7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAuD9CXEhhN1r_evhFbpeKG9ghXSTT2SM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1018346361358-uk44voa31ej0ee02pht76ucf7i7rc9a7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
