@@ -1,15 +1,16 @@
 package com.example.upgrade;
 
 public class userHelperClass {
-    String username, email,phoneNo,password;
+    String username,phoneNo,password;
+    Float speedlimit;
 
     public userHelperClass() {
 
     }
 
-    public userHelperClass(String username, String email, String phoneNo, String password) {
+    public userHelperClass(String username, Float speedlimit, String phoneNo, String password) {
         this.username = username;
-        this.email = email;
+        this.speedlimit = speedlimit;
         this.phoneNo = phoneNo;
         this.password = password;
     }
@@ -22,12 +23,12 @@ public class userHelperClass {
         this.username = username;
     }
 
-    public String getEmail() {
-        return email;
+    public Float getspeedlimit() {
+        return speedlimit;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setSpeedlimit(Float speedlimit) {
+        this.speedlimit = speedlimit;
     }
 
     public String getPhoneNo() {

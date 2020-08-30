@@ -11,8 +11,13 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class MainActivity extends AppCompatActivity {
     private static int SPLASH_SCREEN=5000;
+    FirebaseDatabase rootNode;
+    DatabaseReference reference;
     Animation topAnim,bottomAnim;
     ImageView image;
     TextView logo,slogan;

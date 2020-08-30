@@ -12,8 +12,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class Sing_up extends AppCompatActivity {
+    //public static final Float EXTRASPEEDLIMIT= Float.valueOf("speedlimit");
     Button SINGIN,regBtn;
-    TextInputLayout regUserName, regPhone,regEmail,regPassword;
+    TextInputLayout regUserName, regPhone,regSpeedLimit,regPassword;
     FirebaseDatabase rootNode;
     DatabaseReference reference;
 
@@ -25,7 +26,7 @@ public class Sing_up extends AppCompatActivity {
         SINGIN=findViewById(R.id.Sing_in);
         regUserName=findViewById(R.id.username);
         regPhone=findViewById(R.id.phone);
-        regEmail=findViewById(R.id.email);
+        regSpeedLimit=findViewById(R.id.email);
         regPassword=findViewById(R.id.password);
 
 
@@ -70,19 +71,20 @@ public class Sing_up extends AppCompatActivity {
             }
     private  Boolean validateEmail()
     {
-        String val =regEmail.getEditText().getText().toString();
-        String emailPattern="[a-zA-z0-9._-]+@[a-z]+\\.+[a-z]+";
+        String val =regSpeedLimit.getEditText().getText().toString();
+        //String emailPattern="[a-zA-z0-9._-]+@[a-z]+\\.+[a-z]+";
+        //String noWhiteSpace="(?=\\s+$)";
         if(val.isEmpty())
         {
-            regEmail.setError("field cannot be empty");
+            regSpeedLimit.setError("field cannot be empty");
             return false;
         }
-        else if (!val.matches(emailPattern)){
-            regEmail.setError("Invalid email address");
-            return false;
-        }
+//        else if (!val.matches(noWhiteSpace)){
+//            regSpeedLimit.setError("Invalid speedlimit");
+//            return false;
+//        }
         else{
-            regEmail.setError(null);
+            regSpeedLimit.setError(null);
             return true;
         }
     }
@@ -128,12 +130,14 @@ public void registerUser(View view)
             return;
         }
         String username = regUserName.getEditText().getText().toString();
-        String email = regEmail.getEditText().getText().toString();
+        Float speedlimit = Float.valueOf(regSpeedLimit.getEditText().getText().toString());
         String phoneNo = regPhone.getEditText().getText().toString();
         String password = regPassword.getEditText().getText().toString();
-        userHelperClass helperClass = new userHelperClass(username, email, phoneNo, password);
+        userHelperClass helperClass = new userHelperClass(username, speedlimit, phoneNo, password);
         reference.child(username).setValue(helperClass);
         Intent intent = new Intent(this, login.class);
+        //Float clickedItem=helperClass.getspeedlimit();
+        //final Intent intent1 = intent.putExtra(String.valueOf(EXTRASPEEDLIMIT), clickedItem.getClass());
         startActivity(intent);
 
     }
